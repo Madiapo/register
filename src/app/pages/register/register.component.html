@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+    Register
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="Register(UserData)"  #UserData="ngForm" >
+  <ion-input placeholder="email"ngModel required #email="ngModel"></ion-input>
+<ion-input placeholder="password" type="password" ngModel required #password="ngModel" ></ion-input>
+
+
+
+  
+    <ion-button expand="full" color="secondary">sign-inn</ion-button>
+  </form>
+ 
+
+</ion-content>
+

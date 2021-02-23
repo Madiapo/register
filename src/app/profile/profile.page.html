@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked"></ion-label>
+    <ion-input type="name"  [(ngModel)]="name" placeholder="Name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked"></ion-label>
+    <ion-input type="name"  placeholder="surname"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked"></ion-label>
+    <ion-input type="tel"  placeholder="phone number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked"></ion-label>
+    <ion-input type="name"  placeholder="address"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="update"  >save</ion-button>
+</ion-content>

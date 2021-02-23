@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+    Register
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines="none">
+    <form [formGroup]="registerForm">
+
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input type="email" formControlName="email" placeholder="Email address"></ion-input>
+      </ion-item>
+     <div class="err" *ngIf="registerForm.get('email').touched && registerForm.get('email').invalid">
+       <span *ngIf="registerForm.controls.email.errors.emailValidity; else elseBlock">
+         *invalid email
+       </span>
+       <ng-template #elseBlock>
+        *email is required* 
+       </ng-template>
+       
+     </div>
+ 
+       <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input type="password" formControlName="password" placeholder="password"></ion-input>
+      </ion-item>
+      <div class="err" *ngIf="registerForm.get('password').touched && registerForm.get('password').invalid">
+        <span *ngIf="registerForm.controls.password.errors.passwordValidity; else elseBlock">
+          *password doesnt match
+        </span>
+        <ng-template #elseBlock>
+         *password is required* 
+        </ng-template>
+        
+      </div>
+  
+      <ion-item>
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input type="password" formControlName="passwordd" placeholder="confirm-password"></ion-input>
+      </ion-item>
+      <div class="err" *ngIf="registerForm.get('passwordd').touched && registerForm.get('passwordd').invalid">
+        <span *ngIf="registerForm.controls.passwordd.errors.passwordValidity; else elseBlock">
+          *password doesnt match
+        </span>
+        <ng-template #elseBlock>
+         *confirm password is required* 
+        </ng-template>
+        
+      </div>
+  
+     
+      <ion-button expand="block"  routerLink="/profile" (click)="Register()" >Sign Up</ion-button>
+
+    </form>
+  </ion-list>
+  <div *ngIf="registerForm.valid">
+  <p>please verify your email once you have registered</p>
+  <ion-button colour="secondary" (click)="verification">sign-in</ion-button>
+  </div>
+</ion-content>
+<ion-footer>
+
+
+  
+
+  
+  
+</ion-footer>
